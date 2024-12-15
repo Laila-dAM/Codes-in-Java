@@ -25,3 +25,11 @@ class Greenhouse {
         this.humidity = humidity;
         this.lightIntensity = lightIntensity;
     }
+    
+    public void adjustEnvironment(double temperature, double humidity, double lightIntensity) {
+        this.temperature = temperature;
+        this.humidity = humidity;
+        this.lightIntensity = lightIntensity;
+    }
+
+
