@@ -13,4 +13,9 @@ public class UnderwaterNavigationGame {
     }
     ocean = new char[oceanHeight][ocean Width];
     Random rand = new Random();
+
+    submarineX = oceanWidth / 2;
+    submarineY = oceanHeight / 2;
+        placeTreasureAndObstacles(rand);
+        displayOcean();
 }
