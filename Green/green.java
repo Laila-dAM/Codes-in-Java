@@ -42,4 +42,17 @@ class Greenhouse {
     }
 
 
+    public int calculateGrowthTime(Plant plant) {
+        int growthTime = plant.idealGrowthTime;
+
+        if (temperature < 18 || temperature > 30) {
+            growthTime += 2;
+        }
+        if (humidity < 40 || humidity > 80) {
+            growthTime += 3;
+        }
+        return growthTime;
+    }
+}
+
 
