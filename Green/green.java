@@ -69,6 +69,46 @@ while(true) {
     System.out.println("2. Adjust greenhouse environment");
     System.out.println("3. View plant info and estimated growth time");
     System.out.println("4. Exit");
+
+    int choice = scanner.nextInt();
+    scanner.nextLine();
+
+    if(choice == 1){
+        System.out.println("Enter plant name:");
+        String name = scanner.nextLine();
+        System.out.println("Enter plant type:");
+        String type = scanner.nextLine();
+        System.out.println("Enter ideal growth time (in days):");
+        int growthTime = scanner.nextInt();
+        plants.add(new Plant(name, type, growthTime));
+    }
+    else if (choice == 2){
+    System.out.println("Enter new temperature (°C):");
+        double temp = scanner.nextDouble();
+        System.out.println("Enter new humidity (%):");
+        double hum = scanner.nextDouble();
+        System.out.println("Enter new light intensity (%):");
+        double light = scanner.nextDouble();
+        greenhouse.adjustEnvironment(temp, hum, light);
+        greenhouse.checkEnvironment();
+    }
+    else if (choice == 3){
+        for (Plant plant : plants){
+            System.out.println(plant.getInfo());
+            int growthTime = greenhouse.calculateGrowthTime(plant);
+            System.out.println("Estimated growth time: " + growthTime + "days");
+            
+        }
+    }
+    else if (choice == 4) {
+        break;
+    }
+    else {
+        System.out.println("Invalid choice. Try again.");
+    }
+}
+        scanner.close();
+        }
 }
 
 
