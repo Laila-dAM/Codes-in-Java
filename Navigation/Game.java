@@ -18,4 +18,27 @@ public class UnderwaterNavigationGame {
     submarineY = oceanHeight / 2;
         placeTreasureAndObstacles(rand);
         displayOcean();
+
+    while(gameRunning){
+        System.out.println("Use arrow keys to move (W = up, S = down, A = left, D = right).");
+        System.out.println("Current Score: " + score);
+        String move = scanner.nextLine();
+
+        if(move.equals("W") && submarineY > 0){
+            submarineY--;
+        }
+        else if (move.equals("S") && submarineY < oceanHeight - 1){
+            submarineY++;
+            
+        }
+        else if (move.equals("A") && submarineX > 0){
+            submarineX--;
+        }
+        else if (move.equals("D") && submarineX < oceanWidth - 1){
+            submarineX++;
+        }
+        else {
+            System.out.println("Invalid move.");
+        }
+    }
 }
