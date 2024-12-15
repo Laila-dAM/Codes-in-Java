@@ -63,6 +63,12 @@ public class SmartGreenhouseSimulator {
 
         System.out.println("Smart Greenhouse Plant Growth Simulator");
         
-
+while(true) {
+    System.out.println("Choose an option:");
+    System.out.println("1. Add a new plant");
+    System.out.println("2. Adjust greenhouse environment");
+    System.out.println("3. View plant info and estimated growth time");
+    System.out.println("4. Exit");
+}
 
 
