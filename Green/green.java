@@ -54,5 +54,15 @@ class Greenhouse {
         return growthTime;
     }
 }
+public class SmartGreenhouseSimulator {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        ArrayList<Plant> plants = new ArrayList<>();
+        Greenhouse greenhouse = new Greenhouse(25, 60, 80);
+
+        System.out.println("Smart Greenhouse Plant Growth Simulator");
+        
+
 
 
