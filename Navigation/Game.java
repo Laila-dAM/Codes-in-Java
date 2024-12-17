@@ -40,5 +40,22 @@ public class UnderwaterNavigationGame {
         else {
             System.out.println("Invalid move.");
         }
+        if (checkCollision()){
+            System.out.println("Game Over! You hit an obstacle.");
+            gameRunning = false;
+        }
+        else if(checkTreasure()){
+            score++;
+            placeTreasureAndObstacle(rand);
+        }
+        displayOcean();
+    }
+        scanner.close();
+}
+public static void placeTreasureAndObstacles(Random rand){
+    for (int i = 0; i < oceanHeight; i++){
+    for (int j = 0; j < oceanWidth; j++){
+        ocean[i][j] = '~';
+    }
     }
 }
