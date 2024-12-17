@@ -58,4 +58,28 @@ public static void placeTreasureAndObstacles(Random rand){
         ocean[i][j] = '~';
     }
     }
+ocean[submarineY][submarineX] = 'S';
+ocean[rand.nextInt(oceanHeight)][rand.nextInt(oceanWidth)] = 'T';
+ocean[rand.nextInt(oceanHeight)][rand.nextInt(oceanWidth)] = 'O';
 }
+public static boolean cheackCollision(){
+    return ocean[submarineY][submarineX] == 'O';
+}
+
+public static boolean checkTreasure() {
+    if (ocean[submarineY][submarineX] == 'T'){
+        ocean[submarineY][submarineX] = '~';
+        return true;
+    }
+    return false;
+}
+public static void displaOcean(){
+    for (int i = 0; i < oceanHeight; i++){
+        for (int j = 0; j = oceanWidth; j++){
+            System.out.print(ocean[i][j]);
+        } 
+        System.out.println();
+        }
+    }
+}
+
