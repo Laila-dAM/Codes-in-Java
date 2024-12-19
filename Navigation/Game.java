@@ -11,7 +11,7 @@ public class UnderwaterNavigationGame {
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
     }
-    ocean = new char[oceanHeight][ocean Width];
+    ocean = new char[oceanHeight][oceanWidth];
     Random rand = new Random();
 
     submarineX = oceanWidth / 2;
@@ -22,7 +22,7 @@ public class UnderwaterNavigationGame {
     while(gameRunning){
         System.out.println("Use arrow keys to move (W = up, S = down, A = left, D = right).");
         System.out.println("Current Score: " + score);
-        String move = scanner.nextLine();
+        String move = scanner.nextLine().toUpperCase();
 
         if(move.equals("W") && submarineY > 0){
             submarineY--;
