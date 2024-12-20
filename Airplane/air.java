@@ -85,5 +85,6 @@ if (spd > 600) System.out.println("\nSpeed too high! Reduce to avoid danger.");
     System.out.println();
             
         }
+        scanner.close();
     }
 }
