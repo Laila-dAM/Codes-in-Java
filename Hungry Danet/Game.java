@@ -140,6 +140,21 @@ if (score >= 100){
     public static void main(String[] args){
         JFrame frame = new JFrame("Underwater Natigation Game");
         Game game = new Game();
+
+        frame.add(game);
+        frame.pack();
+        frame.setDefautCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
     }
-    
+    private static class Element {
+        int x, y, value;
+        String symbol;
+
+        Element(int x, int y, String symbol, int value){
+            this.x = x;
+            this.y = y;
+            this.symbol = symbol;
+            this.value = value;
+        }
+    }  
 }
