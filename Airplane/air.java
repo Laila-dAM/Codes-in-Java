@@ -33,6 +33,57 @@ public static void showStart() {
     else System.out.println("Turbulence: Heavy");
 }
     public static void main(String[] args){
-        
+        Scanner scanner = new Scanner(System.in);
+        Random rand = new Random();
+
+        int opt, adj;
+
+        while(true){
+            simWthr();
+            showStat();
+
+            System.out.println("\nChoose:");
+System.out.println("1. +Altitude");
+System.out.println("2. -Altitude");
+System.out.println("3. +Speed");
+System.out.println("4. -Speed");
+System.out.println("5. Exit");
+    opt = scanner.nextInt();
+
+    if(opt == 1){
+        System.out.print("Increase altitude (feet):");
+        adj = scanner.nextInt();
+        adjAlt(adj);
+    }
+else if (opt == 2){
+    System.out.print("Decrease altitude (feet): ");
+    adj = scanner.nextInt();
+    adjAlt(-adj);
+
+} else if (opt == 3){
+    System.out.print("Increase speed (knots): ");
+    adj = scanner.nextInt();
+    adjSpd(adj);
+
+} else if (opt == 4){
+    System.out.print("Decrease speed (knots): ");
+    adj = scanner.nextInt();
+    adjSpd(-adj);
+
+} else if (opt == 5){
+    System.out.println("Exiting.");
+    break;
+} 
+    if (alt <= 0){
+        System.out.println("\nCrashed! Game Over.");
+        break;
+    }
+if (alt == 10000) System.out.println("\nMax altitude reached!");
+if(spd < 100) System.out.println("\nSpeed too low! Increase to avoid stall.");
+if (spd > 600) System.out.println("\nSpeed too high! Reduce to avoid danger.");
+
+    System.out.println();
+            
+        }
     }
 }
