@@ -50,6 +50,29 @@ setFocusable(true);
     }
  }
 });
-        
+    initializeGame();
     }
+
+    private void initializeGame(){
+        characterX = WIDTH / 2;
+        characterY = HEIGHT / 2;
+        score = 0;
+        gameOver = false;
+        elements = new ArrayList<>();
+        timer = new Timer(TIMER_DELAY, this);
+        timer.start();
+        spawnElements();
+    }
+    
+    private void restartGame() {
+        initializeGame();
+        repaint();
+    }
+
+    private void spawnElements(){
+        for(int i = 0; i < 10; i++){
+            elements.add(new Element(radom.nextInt(WIDTH - 50), random.nextInt(HEIGHT - 50), "🍓", 10));
+        }
+    }
+    
 }
