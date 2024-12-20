@@ -116,5 +116,30 @@ setFocusable(true);
         g.drawString("Score:" + score, 10, 20);
     }
     @Override
+    public void actionPerformed(ActionEvent e){
+        elements.removelf(element -> {
+            Rectangle elementBounds = new Rectangle(element.x, element.y, CHARACTER_SIZE, CHARACTER_SIZE);
+            Rectangle characterBounds = new Rectangle(characterX, characterY, CHARACTER_SIZE, CHARACTER_SIZE);
+
+            if(elementBounds.intersects(characterBounds)){
+        score += element.value;
+        if (score < 0){
+            gameOver = true;
+            timer.stop();
+        }
+        return true;
+            }
+        return false;
+        });
+if (score >= 100){
+    gameOver = true;
+    timer.stop();
+}
+        repaint();
+    }
+    public static void main(String[] args){
+        JFrame frame = new JFrame("Underwater Natigation Game");
+        Game game = new Game();
+    }
     
 }
