@@ -20,6 +20,36 @@ public class Game extends JPanel implements ActionListener {
 
     private Timer timer;
     public Game() {
+setPreferredSize(new Dimension(WIDTH, HEIGHT));
+setBackground(Color.BLACK);
+setFocusable(true);
+
+        addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e){
+    if (!gameOver) {
+        int key = e.getKeyCode();
+
+    if(key == KeyEvent.VK_UP && characterY > 0){
+        characterY -= 20;
+        } 
+        else if (key == KeyEvent.VK_DOWN && characterY < HEIGHT - CHARACTER_SIZE) {
+            characterY += 20;
+        }
+        else if (key == KeyEvent.VK LEFT && characterX > 0){
+        characterX -= 20;
+        }
+        else if (key == KeyEvent.VK_RIGHT && characterX < WIDTH - CHARACTER_SIZE) {
+        characterX += 20;
+        }
+    }
+    else {
+        if (e.getKeyCode() == KeyEvent.VK_R){
+            restartGame();
+        }
+    }
+ }
+});
         
     }
 }
