@@ -40,7 +40,7 @@ public static void showStart() {
 
         while(true){
             simWthr();
-            showStat();
+            showStart();
 
             System.out.println("\nChoose:");
 System.out.println("1. +Altitude");
