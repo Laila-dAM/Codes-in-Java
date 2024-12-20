@@ -99,6 +99,22 @@ setFocusable(true);
     return;
         }
         g.setColor(Color.PINK);
+        g.setFont(new Font("Monospaced", Font.BOLD, 30));
+        g.drawString("ε(´｡•᎑•`)っ", characterX, characterY);
+
+        g.setFont(new Font("Monospaced", Font.BOLD, 20));
+        for (Element element : elements){
+            if (element.value > 0){
+                g.setColor(Color.ORANGE);
+            } else {
+                g.setColor(Color.BLUE);
+            }
+        g.drawString(element.symbol, element.x, element.y);
+        }
+        g.setColor(Color.WHITE);
+        g.setFont(new Font("Arial", Font.BOLD, 18));
+        g.drawString("Score:" + score, 10, 20);
     }
+    @Override
     
 }
